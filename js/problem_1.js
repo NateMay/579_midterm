@@ -5,4 +5,4 @@ function onClickButton() {
     document.getElementById("clicked-feedback").textContent = "You clicked the button!";
 }
 
-btn.addEventListener('click', onClickButton());
+btn.addEventListener('click', onClickButton);

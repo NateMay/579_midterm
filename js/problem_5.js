@@ -14,3 +14,28 @@ function getRhymes(rel_rhy, callback) {
 }
 
 // Write your code here
+
+function createListitem(word) {
+    const li = document.createElement('li')
+    li.textContent = word
+    li.classList.add('list-group-item')
+    return li
+}
+
+showRhymesButton.addEventListener('click', () => {
+    rhymesOutput.innerHTML = ''
+    getRhymes(wordInput.value, (resp) => {
+        const rhymes = Object.values(resp)
+        if (rhymes.length) {
+            rhymes.forEach(rhyme => rhymesOutput.append(createListitem(rhyme.word)))
+        } else {
+            rhymesOutput.textContent = 'no rhymes'
+        }
+    
+    })
+})
+
+clearButton.addEventListener('click', () => {
+    wordInput.value = ''
+    rhymesOutput.innerHTML = ''
+})

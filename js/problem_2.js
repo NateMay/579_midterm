@@ -14,4 +14,14 @@ const thingInput = document.querySelector('#problem-2 #thing-num-input');
 const thingCountOutput = document.querySelector('#problem-2 #thing-count');
 
 // Write your code here
-thingCountOutput.textContent = "(TODO)";
+
+function writeText() {
+    const number = parseInt(thingInput.value)
+    thingCountOutput.textContent = `Your added ${number} thing${addS(number)}`
+}
+
+thingInput.addEventListener('input', () => {
+    writeText()
+})
+
+writeText();
